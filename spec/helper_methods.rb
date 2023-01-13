@@ -6,6 +6,7 @@ def load_test_data
   @doctor_2 = @hospital_1.doctors.create!({name: "Alex Karev", specialty: "Pediatric Surgery", university: "Johns Hopkins University"})
   @doctor_3 = @hospital_2.doctors.create!({name: "Miranda Bailey", specialty: "General Surgery", university: "Stanford University"})
   @doctor_4 = @hospital_2.doctors.create!({name: "Derek McDreamy", specialty: "Attending Surgeon", university: "University of Pennsylvania"})
+  @doctor_5 = @hospital_2.doctors.create!({name: "Alejandra Guzman", specialty: "Neural Surgeon", university: "University of Washington"})
 
   @patient_1 = Patient.create!({name: "Katie Bryce", age: 24})
   @patient_2 = Patient.create!({name: "Denny Duquette", age: 2})
@@ -26,4 +27,9 @@ def load_test_data
   @doctor_patient_8 = DoctorPatient.create!({doctor_id: @doctor_3.id, patient_id: @patient_1.id })
   @doctor_patient_9 = DoctorPatient.create!({doctor_id: @doctor_4.id, patient_id: @patient_1.id })
   @doctor_patient_10 = DoctorPatient.create!({doctor_id: @doctor_4.id, patient_id: @patient_4.id })
+  @doctor_patient_11 = DoctorPatient.create!({doctor_id: @doctor_5.id, patient_id: @patient_4.id })
+  @doctor_patient_12 = DoctorPatient.create!({doctor_id: @doctor_5.id, patient_id: @patient_2.id })
+  @doctor_patient_13 = DoctorPatient.create!({doctor_id: @doctor_5.id, patient_id: @patient_5.id })
+  @doctor_patient_14 = DoctorPatient.create!({doctor_id: @doctor_5.id, patient_id: @patient_6.id })
+  @doctor_patient_15 = DoctorPatient.create!({doctor_id: @doctor_5.id, patient_id: @patient_8.id })
 end
