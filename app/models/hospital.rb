@@ -1,6 +1,6 @@
 class Hospital < ApplicationRecord
-  has_many :doctors
-  has_many :doctor_patients, through: :doctors
+  has_many :doctors, dependent: :destroy
+  has_many :patients, through: :doctors
 
   validates_presence_of :name
 end
