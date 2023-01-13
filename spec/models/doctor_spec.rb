@@ -25,5 +25,11 @@ RSpec.describe Doctor do
         expect(@doctor_5.patient_count).to eq(5)
       end
     end
+
+    describe "#ordered_by_count" do
+      xit "returns the doctors in order from most patients to least" do
+        # expect(Doctor.ordered_by_patient_count).to match(@doctor_)
+      end
+    end
   end
 end

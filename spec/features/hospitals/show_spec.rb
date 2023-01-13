@@ -23,6 +23,12 @@ RSpec.describe "Hospital Show Page", type: :feature do
       expect(page).to have_content("#{@doctor_5.name}, Patients: #{@doctor_5.patient_count}")
     end
 
-    it "list of doctors is organized by most number of patients to least number of patients"
+    xit "list of doctors is organized by most number of patients to least number of patients" do
+      visit hospital_path(@hospital_2.id)
+
+      expect(@doctor_5.name).to appear_before(@doctor_3.name)
+      expect(@doctor_3.name).to appear_before(@doctor_4.name)
+      expect(@doctor_4.name).to_not appear_before(@doctor_5.name)
+    end
   end
 end
