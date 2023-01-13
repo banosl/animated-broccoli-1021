@@ -12,4 +12,18 @@ RSpec.describe Doctor do
     it {should validate_presence_of :specialty}
     it {should validate_presence_of :university}
   end
+
+  describe "instance methods" do
+    before :each do
+      load_test_data
+    end
+
+    describe "#patient_count" do
+      it "returns total number of patients for a doctor" do
+        expect(@doctor_1.patient_count).to eq(3)
+        expect(@doctor_2.patient_count).to eq(2)
+        expect(@doctor_5.patient_count).to eq(5)
+      end
+    end
+  end
 end
