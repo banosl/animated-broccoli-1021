@@ -8,4 +8,8 @@ class Patient < ApplicationRecord
   def self.adults
     Patient.where("age >= 18")
   end
+
+  def self.alphabetically
+    Patient.order(:name)
+  end
 end
