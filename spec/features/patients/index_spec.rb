@@ -19,6 +19,16 @@ RSpec.describe "Patients Index Page", type: :feature do
       expect(page).to_not have_content(@patient_8.name)
     end
 
-    it "see the names in ascending alphabetical order (A-Z)"
+    it "see the names in ascending alphabetical order (A-Z)" do
+      visit patients_path
+      
+      expect(@patient_5.name).to appear_before(@patient_7.name)
+      expect(@patient_7.name).to appear_before(@patient_6.name)
+      expect(@patient_6.name).to appear_before(@patient_1.name)
+      expect(@patient_1.name).to appear_before(@patient_3.name)
+      expect(@patient_3.name).to appear_before(@patient_4.name)
+      expect(@patient_4.name).to_not appear_before(@patient_7.name)
+      expect(@patient_3.name).to_not appear_before(@patient_1.name)
+    end
   end
 end
