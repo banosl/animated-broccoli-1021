@@ -11,6 +11,10 @@ def load_test_data
   @patient_2 = Patient.create!({name: "Denny Duquette", age: 2})
   @patient_3 = Patient.create!({name: "Rebecca Pope", age: 39})
   @patient_4 = Patient.create!({name: "Zola Shepherd", age: 32})
+  @patient_5 = Patient.create!({name: "Allison Granger", age: 19})
+  @patient_6 = Patient.create!({name: "Francisco Guzman", age: 53})
+  @patient_7 = Patient.create!({name: "Benito Antonio Martinez Ocasio", age: 28})
+  @patient_8 = Patient.create!({name: "Lupita Goto", age: 14})
 
   @doctor_patient_1 = DoctorPatient.create!({doctor_id: @doctor_1.id, patient_id: @patient_1.id })
   @doctor_patient_2 = DoctorPatient.create!({doctor_id: @doctor_1.id, patient_id: @patient_2.id })
