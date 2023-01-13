@@ -15,7 +15,12 @@ RSpec.describe "Doctor Show Page", type: :feature do
       expect(page).to_not have_content("#{@doctor_3.name}")
     end
 
-    it "see name of the hospital the doctor works at"
+    it "see name of the hospital the doctor works at" do
+      visit doctor_path(@doctor_2.id)
+
+      expect(page).to have_content("Works at #{@doctor_2.hospital.name}")
+      expect(page).to_not have_content("Works at #{@hospital_2.name}")
+    end
     it "see names of all of their patients"
   end
 end
