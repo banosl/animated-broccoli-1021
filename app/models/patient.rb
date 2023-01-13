@@ -4,4 +4,8 @@ class Patient < ApplicationRecord
 
   validates_presence_of :name
   validates_presence_of :age
+
+  def self.adults
+    Patient.where("age >= 18")
+  end
 end
