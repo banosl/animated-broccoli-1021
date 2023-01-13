@@ -21,15 +21,31 @@ RSpec.describe "Doctor Show Page", type: :feature do
       expect(page).to have_content("Works at #{@doctor_2.hospital.name}")
       expect(page).to_not have_content("Works at #{@hospital_2.name}")
     end
+
     it "see names of all of their patients" do
-      visit doctor_path(@doctor_3.id)
-save_and_open_page
+    visit doctor_path(@doctor_3.id)
+
       within "#patients" do
         expect(page).to have_content(@patient_1.name)
         expect(page).to have_content(@patient_3.name)
         expect(page).to have_content(@patient_4.name)
         expect(page).to_not have_content(@patient_2.name)
       end
+    end
+
+    it "next to each patient's name is a button to remove the patient from the doctor's caseload" do
+      visit doctor_path(@doctor_4.id)
+
+      within "#patients" do
+        expect(page).to have_button("Remove #{@patient_1.name} from caseload")
+        expect(page).to have_button("Remove #{@patient_4.name} from caseload")
+      end
+    end
+
+    describe "when the button is clicked for one patient" do
+      it "user is brought back to the doctor show page and patient is no longer listed"
+
+      it "when user visits a different doctor's page that had the same patient, the patient is still there"
     end
   end
 end

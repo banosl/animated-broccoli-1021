@@ -8,6 +8,10 @@
 <section id="patients">
   <h4><%= @doctor.name %>'s Patients:</h4>
     <% @patients.each do |patient| %>
-      <%= patient.name %><br/>
+      <%= patient.name %>
+      <%= form_with url: doctor_path(@doctor.id), method: :delete, local: true do |form| %>
+        <%= form.hidden_field :patient, value: patient.id %>
+        <%= form.submit "Remove #{patient.name} from caseload"%>
+      <% end %>
     <% end %>
 </section>
