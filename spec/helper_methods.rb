@@ -13,13 +13,13 @@ def load_test_data
   @patient_4 = Patient.create!({name: "Zola Shepherd", age: 32})
 
   @doctor_patient_1 = DoctorPatient.create!({doctor_id: @doctor_1.id, patient_id: @patient_1.id })
-  @doctor_patient_8 = DoctorPatient.create!({doctor_id: @doctor_3.id, patient_id: @patient_1.id })
   @doctor_patient_2 = DoctorPatient.create!({doctor_id: @doctor_1.id, patient_id: @patient_2.id })
   @doctor_patient_3 = DoctorPatient.create!({doctor_id: @doctor_1.id, patient_id: @patient_4.id })
   @doctor_patient_4 = DoctorPatient.create!({doctor_id: @doctor_2.id, patient_id: @patient_2.id })
   @doctor_patient_5 = DoctorPatient.create!({doctor_id: @doctor_2.id, patient_id: @patient_3.id })
   @doctor_patient_6 = DoctorPatient.create!({doctor_id: @doctor_3.id, patient_id: @patient_3.id })
   @doctor_patient_7 = DoctorPatient.create!({doctor_id: @doctor_3.id, patient_id: @patient_4.id })
+  @doctor_patient_8 = DoctorPatient.create!({doctor_id: @doctor_3.id, patient_id: @patient_1.id })
   @doctor_patient_9 = DoctorPatient.create!({doctor_id: @doctor_4.id, patient_id: @patient_1.id })
   @doctor_patient_10 = DoctorPatient.create!({doctor_id: @doctor_4.id, patient_id: @patient_4.id })
 end

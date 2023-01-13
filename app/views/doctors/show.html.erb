@@ -4,3 +4,10 @@
 <p>MD from: <%= @doctor.university %></p>
 
 <p>Works at <%= @doctor.hospital.name %></p>
+
+<section id="patients">
+  <h4><%= @doctor.name %>'s Patients:</h4>
+    <% @patients.each do |patient| %>
+      <%= patient.name %><br/>
+    <% end %>
+</section>
